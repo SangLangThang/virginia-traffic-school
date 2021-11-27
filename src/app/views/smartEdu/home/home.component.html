@@ -1,0 +1,213 @@
+<div class="home page-inner theme-style-2">
+    <div class="bg-color py-5">
+        <div class="container container-fluid-product">
+            <div class="row mb-2 mb-md-5">
+                <div class="col-12">
+                    <h1 class="text-uppercase font-weight-bold text-center pt-2 pt-md-5">dismiss your ticket <span>cheap
+                            &
+                            fast</span>
+                    </h1>
+                </div>
+
+            </div>
+            <div class="row gap-custom">
+                <div class="col-12  col-md-6 d-flex justify-content-center position-relative">
+                    <img class="img-fluid" src="assets/img/photo/featured-main-removebg-preview.png" alt="">
+                    <img class="img-price" src="assets/img/photo/price.png" alt="">
+                </div>
+                <div class="col-12 col-md-6">
+                    <div>
+                        <h3>The <b>Fastest</b>,<b>Cheap</b> and <b>Easy</b> <br> </h3>
+                        <h3>Traffic School Course in Virginia</h3>
+                        <p>Licensed by <b> Virginia DMV</b> for ALL CA Courts</p>
+                    </div>
+                    <button class=" btn-home btn btn-primary btn-block my-4 font-weight-bold">Start Course Now For
+                        Free</button>
+                    <div class="featured_text mt-2 font-weight-bold" *ngFor="let benefit of  benefitFeatured">
+                        <h4><i class="fa fa-check fa-lg"></i>{{benefit.title}}</h4>
+                        <p>{{benefit.sub}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container container-fluid-product">
+            <div class="row mt-3">
+                <div class="col-12 d-flex align-items-center justify-content-center flex-column flex-md-row">
+                    <p class="font-weight-bolder">Virginia DMV Licensed </p>
+                    <img class="mx-3" src="assets/img/photo/seal-state.png" alt="">
+                    <p>Accepted by <b>ALL</b> Virginia Courts</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section bg-white py-5">
+        <div class="container container-fluid-product ">
+            <div class="row">
+                <div class="col-12  d-flex align-items-center justify-content-center pb-4">
+                    <div class="section-line"></div>
+                    <h3 class="font-weight-bold text-uppercase text-center  mx-2">Who need course</h3>
+                    <div class="section-line"></div>
+                </div>
+                <div class="col-12 col-md-6 py-3 rounded ">
+                    <h3 class="font-weight-bolder pb-3">
+                        Virginia Driver Improvement Program for anyone who needs to take a course to
+                    </h3>
+                    <ul class="pl-0">
+                        <li *ngFor="let virginaProgram of virginaPrograms" class="pb-2">
+                            <i class="fa  fa-lg mr-2 color" [class]="virginaProgram.icon"></i>
+                            {{virginaProgram.content}}
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 shadow py-3  bg-white rounded">
+                    <form>
+                        <h3 class="text-dark">Login Now</h3>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="icon-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Username" autocomplete="username"
+                                required>
+                        </div>
+                        <div class="input-group mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="icon-lock"></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Password"
+                                autocomplete="current-password" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <button type="button" class="btn btn-primary px-4">Login</button>
+                            </div>
+                            <div class="col-6 text-right">
+                                <button type="button" class="btn btn-link px-0">Forgot password?</button>
+                            </div>
+                        </div>
+                    </form>
+                    <img class="mt-2" src="assets/img/photo/img_paymenttype-removebg-preview.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section bg-color py-5">
+        <div class="container container-fluid-product ">
+            <div class="row">
+                <div class="col-12  d-flex align-items-center justify-content-center pb-4">
+                    <div class="section-line"></div>
+                    <h3 class="font-weight-bold text-uppercase text-center  mx-2">Featured Course</h3>
+                    <div class="section-line"></div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3  mb-3" *ngFor="let featuredCourse of featuredCourses ">
+                    <div
+                        class=" h-100 text-center shadow p-3  bg-white rounded d-flex align-items-center justify-content-start flex-column">
+                        <i class="fa  fa-3x " [class]="featuredCourse.icon"></i>
+                        <p class="color my-2">{{featuredCourse.title}}</p>
+                        <em>{{featuredCourse.text}}</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section bg-white py-5">
+        <div class="container-fluid container-fluid-product">
+            <div class="row">
+                <div class="col-12  d-flex align-items-center justify-content-center pb-4">
+                    <div class="section-line"></div>
+                    <h3 class="font-weight-bold text-uppercase text-center  mx-2">Frequently Asked Questions</h3>
+                    <div class="section-line"></div>
+                </div>
+                <div class="col-12">
+                    <div class="accordions mt-3">
+                        <div class="accordion_container mb-1 bg-white shadow" *ngFor="let FAQ of FAQs; let i = index">
+                            <div class="accordion d-flex flex-row align-items-center">
+                                <p class="p-3 mb-0">{{FAQ.ques}}</p>
+                                <button class="btn btn-outline-light text-dark ml-auto mr-3" (click)="onTogglePanel(i)">
+                                    <i class="fa " [class]="togglePanel.includes(i)? 'fa-minus':'fa-plus'"></i>
+                                </button>
+                            </div>
+                            <div id="collapseEvent" [isAnimated]="true" [collapse]="!togglePanel.includes(i)">
+                                <div class="well well-lg card card-block card-header border-0">
+                                    <p> {{FAQ.ans}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section bg-color py-5">
+        <div class="container-fluid container-fluid-product">
+            <div class="row ">
+                <div class="col-12  d-flex align-items-center justify-content-center pb-4">
+                    <div class="section-line"></div>
+                    <h3 class="font-weight-bold text-uppercase text-center  mx-2">What Client Says
+                        About Us</h3>
+                    <div class="section-line"></div>
+                </div>
+                <div class="col-12 mb-3">
+                    <div class="row">
+                        <div class="col-12  d-flex align-items-center justify-content-center">
+                            <img src="assets/img/photo/featured-2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <swiper [config]="config" class="testimonial theme-style-1">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" *ngFor="let swiperData of swiperDatas">
+                                <div class="content">
+                                    <p>{{swiperData.name}}</p>
+                                    <p class="content_comment">{{swiperData.comment}}</p>
+                                    <div class="rating">
+                                        <i class="fa fa-star fa-lg "></i>
+                                        <i class="fa fa-star fa-lg "></i>
+                                        <i class="fa fa-star fa-lg "></i>
+                                        <i class="fa fa-star fa-lg "></i>
+                                        <i class="fa fa-star fa-lg "></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next">
+
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                    </swiper>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section bg-white py-5">
+        <div class="container-fluid container-fluid-product">
+            <div class="row">
+                <div class="col-12  d-flex align-items-center justify-content-center pb-4">
+                    <div class="section-line"></div>
+                    <h3 class="font-weight-bold text-uppercase text-center  mx-2">Traffic School Course On Any Device,
+                        Any Time</h3>
+                    <div class="section-line"></div>
+                </div>
+                <div class="col-12 col-md-6 d-flex justify-content-center flex-column align-items-center">
+                    <img [style]="{'max-width':'350px'}" src="assets/img/photo/featured-1.png" alt="">
+                </div>
+                <div class="col-12 col-md-6 d-flex justify-content-center">
+                    <img class="w-100" src="assets/img/photo/responsive-583x350-removebg-preview.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

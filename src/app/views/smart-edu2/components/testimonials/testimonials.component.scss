@@ -1,0 +1,50 @@
+.section {
+  background-color: #1f1f1f;
+  &:before {
+    background: rgb(6 6 6 / 80%);
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+  }
+}
+.section-title {
+  position: relative;
+  p {
+    color: var(--theme3-color-text);
+  }
+}
+.content {
+  max-width: 550px;
+  margin: 0 auto;
+}
+.testi-meta {
+  img {
+    max-width: 55px;
+  }
+}
+.desc {
+  i {
+    color: var(--theme3-primary-color);
+  }
+}
+.content_comment {
+  color: #707070;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+}
+.parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 120px 0;
+  position: relative;
+  width: 100%;
+  background-position: center center;
+}

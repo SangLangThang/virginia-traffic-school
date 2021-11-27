@@ -1,0 +1,21 @@
+.section-title {
+  h3 {
+    font-size: 42px;
+  }
+  p {
+    color: var(--theme3-color-text);
+  }
+}
+.groups-btn {
+    border: 1px solid #e1e1e1;
+	border-radius: 2px;
+    gap: 10px;
+    .btn-section{
+        border: none;
+        font-weight: 600;
+        &.select{
+            background-color: var(--theme3-bg-btn);
+            color: white;
+        }
+    }
+}

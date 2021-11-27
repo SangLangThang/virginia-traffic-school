@@ -1,0 +1,102 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <span data-testid="displayName" class="font-weight-bold">{{userDatabase?.displayName}}</span>
+                    <span class="text-50">{{userDatabase?.email}}</span>
+                    <span class="avatar-status badge-success"></span>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <img [src]="userDatabase?.avatar ? userDatabase?.avatar: ''"
+                            class="img-avatar img-avatar-preview mb-3">
+                    </div>
+                    <p>Registered: {{userDatabase?.createdAt | date:'short'}}</p>
+                    <div  >
+                        <a class="dropdown-item" *ngFor="let item of acountUser"><i class="fa " [class]="item.icon"></i>
+                            {{item.display}}<span class="badge" [class]="item.bagIcon">{{item.bagNumber}}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Profile</strong> User 
+                </div>
+                <div class="card-body">
+                    <form class="form-horizontal" [formGroup]="profileForm">
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="avatar">Avatar</label>
+                            <div class="col-md-9">
+                                <img [src]="previewUrl" class="img-avatar img-avatar-preview mb-3">
+                                <input type="file" data-cy="avatar" id="avatar" name="avatar" class="form-control"
+                                    formControlName="avatar" (change)="onSelectFile($event)">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="status">Status</label>
+                            <div class="col-md-9">
+                                <ngx-select [allowClear]="true" [items]="statusUser" optionValueField="Code"
+                                    optionTextField="Name" formControlName="status" id="status"
+                                    data-cy="status"
+                                    >
+                                    <ng-template ngx-select-option ngx-select-option-selected let-option
+                                        let-text="text">
+                                        <span class="badge badgeStatus"
+                                            [class]="option.data.Code">{{option.data.Name}}</span>
+                                    </ng-template>
+                                </ngx-select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="username">UserName</label>
+                            <div class="col-md-9">
+                                <input type="text" data-cy="username" data-testid="username" name="username" class="form-control"
+                                    formControlName="username">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="country">Country</label>
+                            <div class="col-md-9">
+                                <ngx-select [allowClear]="true" id="country" [items]="items" optionValueField="Code"
+                                    optionTextField="Name" formControlName="country" data-cy="country"
+                                    placeholder="Please select country">
+                                    <ng-template ngx-select-option ngx-select-option-selected let-option
+                                        let-text="text">
+                                        <i class="flag-icon h4 mb-0 mr-2" [class]="option.data.Code"></i>
+                                        {{option.data.Name}}
+                                    </ng-template>
+                                </ngx-select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="paymentMethod">Payment Method</label>
+                            <div class="col-md-9">
+                                <ngx-select [allowClear]="true" id="paymentMethod" data-cy="paymentMethod" [items]="paymentMethods" optionValueField="Code"
+                                    optionTextField="Name" formControlName="paymentMethod"
+                                    placeholder="Please select Payment Method">
+                                    <ng-template ngx-select-option ngx-select-option-selected let-option
+                                        let-text="text">
+                                        <i class="fa paymentMethod" [class]="option.data.Code"></i>
+                                        {{option.data.Name}}
+                                    </ng-template>
+                                </ngx-select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <button type="button" data-cy="submit" id="submit" (click)="onSubmit(profileForm)" class="btn btn-sm btn-primary"><i
+                            class="fa fa-dot-circle-o"></i>
+                        Save Profile</button>
+                    <button type="button" (click)="onReset()" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i>
+                        Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-toasts aria-live="polite" aria-atomic="true"></app-toasts>

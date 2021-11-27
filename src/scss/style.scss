@@ -1,0 +1,11 @@
+// If you want to override variables do it here
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap');
+
+
+// Import styles
+@import "~@coreui/coreui/scss/coreui";
+// If you want to add something do it here
+@import "custom";
+@import "products_theme/theme1";
+@import "products_theme/theme2";
+@import "products_theme/theme3";

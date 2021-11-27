@@ -1,0 +1,27 @@
+<header class="header theme-style-3 w-100 shadow-sm bg-header text-white">
+    <nav class="navbar navbar-expand-md h-100">
+        <div class="container-fluid container-fluid-product h-100 p-0">
+            <a routerLink="home" class="h-100 mr-auto">
+                <div class="d-flex align-items-center justify-content-start h-100">
+                    <div class="h-100"><img class="h-100" src="assets/img/photo/virginia-logo.png" alt=""></div>
+                    <div class="h-100 logo_title"><img class="h-100" src="assets/img/photo/virginia-logo-title.png"
+                            alt="">
+                    </div>
+                </div>
+            </a>
+            <div class="main_nav d-flex align-items-center" [class.active]="toggleMenuMobile">
+                <ul class="navbar-nav me-auto mr-1"  >
+                    <li #link class="nav-item dot-circle" routerLinkActive="active" *ngFor="let navLink of navLinks">
+                        <a [routerLink]="navLink.url" class=" nav-link text-uppercase font-weight-bold">{{navLink.name}}</a>
+                    </li>
+                </ul>
+                <a routerLink="home" class="btn btn-outline-primary btn-lg font-weight-bold btn-home hover-btn">
+                    <span>Book Now</span>
+                </a>
+            </div>
+            <button #link class="btn-hamburger btn btn-outline-primary">
+                <span><i class="fa fa-bars fa-lg" aria-hidden="true"></i></span>
+            </button>
+        </div>
+    </nav>
+</header>

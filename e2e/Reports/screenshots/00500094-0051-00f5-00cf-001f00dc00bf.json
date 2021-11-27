@@ -1,0 +1,1 @@
+{"description":"Should select option Visa of paymentMethod select and clear option|User page","passed":true,"pending":false,"os":"Windows","instanceId":8252,"browser":{"name":"chrome","version":"96.0.4664.45"},"message":"Passed.","trace":"","browserLogs":[],"screenShotFile":"00500094-0051-00f5-00cf-001f00dc00bf.png","timestamp":1637896897307,"duration":1377}

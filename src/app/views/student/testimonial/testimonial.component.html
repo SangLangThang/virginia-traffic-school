@@ -1,0 +1,47 @@
+<div class="testimonial py-4 theme-style-1">
+    <div class="container-fluid container-fluid-product">
+        <div class="row ">
+            <div class="col-12 mb-3">
+                <div class="row">
+                    <div class=" col-12 col-md-8">
+                        <div class="testimonial_title">
+                            <h3>Trusted by Virginia Traffic School To Be Fast, Easy and Cheap</h3>
+                        </div>
+                    </div>
+                    <div class=" col-12 col-md-4 testimonial_img">
+                        <img src="assets/img/photo/featured-2.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <swiper [config]="config" class="testimonial theme-style-1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" *ngFor="let slide of slides">
+                            <div class="content">
+                                <p>{{slide.name}}</p>
+                                <p class="content_comment">{{slide.comment}}</p>
+                                <div class="rating">
+                                    <i class="fa fa-star fa-lg "></i>
+                                    <i class="fa fa-star fa-lg "></i>
+                                    <i class="fa fa-star fa-lg "></i>
+                                    <i class="fa fa-star fa-lg "></i>
+                                    <i class="fa fa-star fa-lg "></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next">
+
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                </swiper>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<div class="app-body">
+  <main class="main d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="card-group">
+            <div class="card p-4">
+              <div class="card-body">
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)">
+                  <h1>Register</h1>
+                  <p class="text-muted">Create your account</p>
+                  <alert type="danger" *ngIf="error">
+                    <strong>Oh snap!</strong> {{error}}
+                  </alert>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-envelope-o"></i></span>
+                    </div>
+
+                    <input type="email" placeholder="Email" id="email" class="form-control"
+                      [class.is-invalid]="registerForm.get('email').errors && registerForm.get('email').touched"
+                      [class.is-valid]="!registerForm.get('email').errors" formControlName="email">
+                    <div class="invalid-feedback"
+                      *ngIf="registerForm.get('email').errors && registerForm.get('email').touched">
+                      <span *ngIf="registerForm.get('email').errors.required">
+                        This field is required
+                      </span>
+                      <span *ngIf="registerForm.get('email').errors.email">
+                        This field should type of email
+                      </span>
+                    </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-lock"></i></span>
+                    </div>
+                    <input type="password" placeholder="Password" id="password" class="form-control"
+                      formControlName="password"
+                      [class.is-invalid]="registerForm.get('password').errors && registerForm.get('password').touched"
+                      [class.is-valid]="!registerForm.get('password').errors">
+                    <div class="invalid-feedback"
+                      *ngIf="registerForm.get('password').errors && registerForm.get('password').touched">
+                      <span *ngIf="registerForm.get('password').errors.required">
+                        This field is required
+                      </span>
+                      <span *ngIf="registerForm.get('password').errors.minlength">
+                        Min {{registerForm.get('password').errors.minlength.requiredLength}} chars is required
+                      </span>
+                    </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-lock"></i></span>
+                    </div>
+                    <input type="password" placeholder="RepeatPassword" id="rp-password" class="form-control"
+                      formControlName="repeatPassword"
+                      [class.is-invalid]="registerForm.get('repeatPassword').errors && registerForm.get('repeatPassword').touched"
+                      [class.is-valid]="!registerForm.get('repeatPassword').errors">
+                    <div class="invalid-feedback"
+                      *ngIf="registerForm.get('repeatPassword').errors && registerForm.get('repeatPassword').touched">
+                      <span *ngIf="registerForm.get('repeatPassword').errors.required">
+                        This field is required
+                      </span>
+                      <span *ngIf="registerForm.get('repeatPassword').errors.minlength">
+                        Min {{registerForm.get('repeatPassword').errors.minlength.requiredLength}} chars is required
+                      </span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <button type="submit" [disabled]="registerForm.invalid && !isLoading"
+                        class="btn btn-primary px-4">Create account</button>
+                    </div>
+                    <div class="col-6 text-right">
+                      <a routerLink="/login" class="btn btn-link px-0">Login Now!</a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

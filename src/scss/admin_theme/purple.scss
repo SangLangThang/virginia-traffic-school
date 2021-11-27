@@ -1,0 +1,26 @@
+
+$primary: #1266f1 !default;
+$secondary: #b23cfd !default;
+$success: #00b74a !default;
+$info: #39c0ed !default;
+$warning:  #ffa900 !default;
+$danger: #f93154 !default;
+$dark: #262626 !default;
+$light: #fbfbfb !default;
+$theme-colors: () !default;
+$theme-colors: map-merge(
+  (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark,
+  ),
+  $theme-colors
+);
+
+/* redefine theme color variables */
+@import "~@coreui/coreui/scss/coreui";

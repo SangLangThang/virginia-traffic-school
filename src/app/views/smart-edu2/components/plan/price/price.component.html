@@ -1,0 +1,23 @@
+<div class="row theme-style-3 py-4 text-center box">
+    <div class="col-md-4" *ngFor="let pricingFeature of pricingFeatures">
+        <div class="bg-white shadow rounded pricing-table pricing-table-highlighted ">
+            <div class="pricing-table-header py-3 bg-dark ">
+                <h2 class="font-weight-bold">${{pricingFeature.price}}</h2>
+                <p class="text-uppercase font-weight-bold">{{pricingFeature.time}}</p>
+            </div>
+            <div class="pricing-table-features p-4 text-left">
+                <p *ngFor="let item of pricingFeature.features" class="text-muted">
+                    <i class="fa fa-envelope-o p-2 " [class]="item.icon"></i>
+                    <span class="mx-2">|</span>
+                    <strong class="text-dark">{{item.value}}</strong> {{item.name}}
+                </p>
+            </div>
+            <hr>
+            <div class="pricing-table-sign-up py-3">
+                <a routerLink="home"
+                    class="btn btn-outline-primary btn-lg font-weight-bold btn-price hover-btn"><span>Order
+                        Now</span></a>
+            </div>
+        </div>
+    </div>
+</div>

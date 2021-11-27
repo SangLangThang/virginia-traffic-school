@@ -1,0 +1,25 @@
+<swiper [config]="config" class="testimonial theme-style-1">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let ourHistory of ourHistorys">
+            <div class="content">
+                <div class="timeline__item">
+                    <div class="timeline__content img-bg-01">
+                        <h2>2018</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim neque condimentum
+                            lacus dapibus. Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- Add Arrows -->
+    <div class="swiper-button-next">
+
+    </div>
+    <div class="swiper-button-prev"></div>
+</swiper>

@@ -1,0 +1,170 @@
+<div class="box-about-us theme-style-1">
+    <div class="banner pb-4">
+        <!-- Background image artist https://unsplash.com/@thepootphotographer -->
+        <div class="banner_background">
+            <img src="assets/img/photo/about.jpg" alt="">
+        </div>
+        <div class="banner_container container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="banner_content text-center">
+                        <div class="banner_title">About us</div>
+                        <div class="breadcrumbs">
+                            <ul>
+                                <li><a routerLink="../home">Home</a></li>
+                                <li>About us</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about py-4">
+        <div class="container-fluid container-fluid-product">
+            <div class="row about_row row-lg-eq-height">
+                <div class="col-md-6">
+                    <div class="about_content">
+                        <h2 class="about_title">We are on your side!</h2>
+                        <div class="about_text">
+                            <p>We have been involved in the traffic safety, traffic school and innovative driver
+                                training services industry since 1986, with a knowledge base of over 45 years worth of
+                                experience in the traffic school industry. Our company has expanded nationally
+                                graduating hundreds of thousands of satisfied students.</p>
+                        </div>
+                        <div class="button teachers_button" (click)="openScrollableContent(longContent)">
+                            <a>More Infomation
+                                <div class="button_arrow">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about_image"><img src="assets/img/photo/img_contact_us_main.png" alt="About us"></div>
+                </div>
+            </div>
+            <div class="row about_row row-lg-eq-height">
+                <div class="col-md-6 order-md-1 order-2">
+                    <div class="about_image"><img src="assets/img/photo/img_contact_us_main.png" alt=""></div>
+                </div>
+                <div class="col-md-6 order-lg-2 order-1">
+                    <div class="about_content">
+                        <h2 class="about_title">Our Mission <br> We are here to help you!</h2>
+                        <div class="about_text">
+                            <p>Superior customer service.</p>
+                            <p>Our traffic school is cheap, simple to read and very easy to use.</p>
+                            <p>Our traffic school course is designed for everyone especially non-computer savvy
+                                customers.</p>
+                            <p> Providing the most effective, best traffic school programs reducing collisions and
+                                making driving enjoyable and of course getting the ticket off your DMV record.
+                            </p>
+                        </div>
+                        <div class="button teachers_button">
+                            <a routerLink="../login">Login Now
+                                <div class="button_arrow">
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Milestones -->
+
+    <div class="milestones py-4">
+        <div class="milestones_background ">
+            <img src="assets/img/photo/about.jpg" alt="">
+        </div>
+        <div class="container container-fluid container-fluid-product">
+            <div class="row milestones_container">
+                <!-- Milestone -->
+                <div class="col-sm-6 col-md-3 milestone_col">
+                    <div class="milestone text-center">
+                        <div class="milestone_icon"><img class="filter-green" src="assets/img/photo/milestone_1.svg" alt=""></div>
+                        <div class="milestone_counter" data-end-value="1548">{{courses[0]}}</div>
+                        <div class="milestone_text">Online Courses</div>
+                    </div>
+                </div>
+
+                <!-- Milestone -->
+                <div class="col-sm-6 col-md-3 milestone_col">
+                    <div class="milestone text-center">
+                        <div class="milestone_icon"><img class="filter-green" src="assets/img/photo/milestone_2.svg" alt=""></div>
+                        <div class="milestone_counter" data-end-value="7286">{{students[0]}} </div>
+                        <div class="milestone_text">Students</div>
+                    </div>
+                </div>
+
+                <!-- Milestone -->
+                <div class="col-sm-6 col-md-3 milestone_col">
+                    <div class="milestone text-center">
+                        <div class="milestone_icon"><img class="filter-green" src="assets/img/photo/milestone_3.svg" alt=""></div>
+                        <div class="milestone_counter" data-end-value="257">{{teachers[0]}}</div>
+                        <div class="milestone_text">Teachers</div>
+                    </div>
+                </div>
+
+                <!-- Milestone -->
+                <div class="col-sm-6 col-md-3 milestone_col">
+                    <div class="milestone text-center">
+                        <div class="milestone_icon"><img class="filter-green" src="assets/img/photo/milestone_4.svg" alt=""></div>
+                        <div class="milestone_counter" data-end-value="39">{{countries[0]}}</div>
+                        <div class="milestone_text">Countries</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #longContent let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">We are on your side!</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>We have been involved in the traffic safety, traffic school and innovative driver training services industry
+            since 1986, with a knowledge base of over 45 years worth of experience in the traffic school industry. Our
+            company has expanded nationally graduating hundreds of thousands of satisfied students.
+        </p>
+        <p>The principals of our online traffic school company are licensed by the DMV and have been involved in
+            operating teaching drivers training, traditional traffic school and drivers education in the classroom for
+            decades.
+        </p>
+        <p>The idea of offering another alternative traffic school format to classroom traffic school came about when we
+            realized a lot of our traffic school students would prefer to spend their Saturday or Sunday with their
+            family or go shopping etc. Frankly they prefer to be anywhere else than stuck in a traffic school classroom.
+            Who can blame them!
+        </p>
+        <p>We realized that working professionals, stay-at-home parents, and students who could not find a classroom
+            traffic school in time to meet their due date sometimes would not even finish their traffic school.
+        </p>
+        <p>Our classroom traffic school students would always ask us if they could have a book for traffic school to
+            read at home or do something so they don’t have to sit in the classroom for 8 hours to finish their traffic
+            school.
+        </p>
+        <p>With our background in information technology, involvement in the traffic school, and driving safety
+            education industry we developed an online information technology based traffic school course and wrote a
+            lesson plan to construct an online traffic school course that can be informative and very simple to use.
+        </p>
+        <p>Our goal from the beginning was to accommodate everyone who wants to take traffic school, specifically
+            non-computer savvy customers, those who are not comfortable working with computers. We believe that we have
+            achieved that from the comments we get from our customers. (customer comments) Our online traffic school
+            course is simple to read, very easy to use and cheap.
+        </p>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>

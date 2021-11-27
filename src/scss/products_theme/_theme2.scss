@@ -1,0 +1,30 @@
+:root {
+  --theme2-primary-color: #6ec9f8;
+  --theme2-light-color: #5eb1ef;
+}
+a{
+  outline: none;
+}
+
+.theme-style-2 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@include media-breakpoint-up(sm) {
+  .theme-style-2 {
+    font-size: 1rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .theme-style-2 {
+    font-size: 1.1rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .theme-style-2 {
+    font-size: 1.2rem;
+  }
+}

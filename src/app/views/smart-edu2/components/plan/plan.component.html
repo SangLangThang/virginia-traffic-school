@@ -1,0 +1,20 @@
+<div class="section theme-style-3 py-5 bg-white">
+    <div class="container container-fluid-product ">
+        <div class="section-title text-center ">
+            <h3 class="font-weight-bold pb-2">Choose Your Plan</h3>
+            <p class="pb-5">Lorem ipsum dolor sit aet, consectetur adipisicing lit sed do eiusmod tempor incididunt ut
+                labore et
+                dolore magna aliqua. </p>
+        </div><!-- end title -->
+        <div class="row">
+            <div class="col-12 col-sm-8 offset-sm-2 col-md-4 offset-md-4">
+                <ul class="groups-btn d-flex justify-content-center p-2">
+                    <li class=""><button class=" p-3 btn btn-outline-dark btn-lg btn-section select" (click)="onChangePrice('month')">Monthly Subscription</button>
+                    </li>
+                    <li><button class="p-3 btn btn-outline-dark btn-lg btn-section" (click)="onChangePrice('year')">Yearly Subscription</button></li>
+                </ul>
+            </div><!-- end col -->
+        </div>
+        <app-price></app-price>
+    </div><!-- end container -->
+</div><!-- end section -->

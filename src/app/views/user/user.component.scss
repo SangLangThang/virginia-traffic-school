@@ -1,0 +1,20 @@
+.img-avatar-preview {
+  max-width: 55px;
+  height: 55px;
+  object-fit: cover;
+}
+.avatar {
+  & .img-avatar-preview {
+    max-width: 55px;
+    height: 55px;
+    object-fit: cover;
+  }
+}
+.paymentMethod {
+  font-size: 20px;
+  color: black !important;
+  margin-right: 3px;
+}
+.dropdown-item .badgeStatus {
+  position: inherit !important;
+}

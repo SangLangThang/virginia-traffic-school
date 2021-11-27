@@ -1,0 +1,33 @@
+<div class="home theme-style-3">
+    <swiper [config]="config" class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let homeSlide of homeSlides">
+                <img [src]="homeSlide.url" alt="">
+                <div class="content" [class]="homeSlide.position">
+                    <h1 class="text-white"> 
+                        <span><strong class="mr-2">{{homeSlide.titleStrong}}</strong></span>
+                        {{homeSlide.title}}
+                    </h1>
+                    <p class="lead text-white">{{homeSlide.sub}}</p>
+                    <div class="text-uppercase">
+                        <a routerLink="home" class="btn btn-outline-primary btn-lg hover-btn btn-slide mr-sm-2 mr-0  mb-2 mb-sm-0 "><span>Contact
+                                Us</span></a>
+                        <a routerLink="home" class="btn btn-outline-primary btn-lg hover-btn btn-slide mb-2 mb-sm-0
+                        "><span>Read More</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </swiper>
+</div>
+<app-about></app-about>
+<app-our-history></app-our-history>
+<app-milestones></app-milestones>
+<app-plan></app-plan>
+<app-testimonials></app-testimonials>
+<app-partner></app-partner>

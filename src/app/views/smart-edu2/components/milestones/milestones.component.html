@@ -1,0 +1,14 @@
+<div class="section theme-style-3 cl py-5">
+    <div class="container-fluid container-fluid-product">
+        <div class="row text-left stat-wrap">
+            <div class="col-md-4 col-sm-4 col-xs-12 mile-item" *ngFor="let item of mileStones">
+                <div class="icon_wrap bg-white m-0 p-0 text-dark text-center float-left mr-3"><i class="fa fa-lg  "
+                        [class]="item.icon"></i></div>
+                <div>
+                    <p class="font-weight-bold m-0 p-0">{{item.count}}</p>
+                    <span class="font-weight-bold m-0 p-0">{{item.name}}</span>
+                </div>
+            </div><!-- end col -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div><!-- end section -->

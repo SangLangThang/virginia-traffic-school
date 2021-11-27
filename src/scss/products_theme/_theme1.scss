@@ -1,0 +1,75 @@
+:root {
+  --theme1-btn-color: #263575;
+  --theme1-btn-light-color: #405ccc;
+}
+ul,
+li {
+  padding: 0;
+  margin-bottom: 0px;
+}
+.theme-style-1 {
+  .button {
+    display: inline-block;
+    width: auto;
+    height: 47px;
+    background: var(--theme1-btn-light-color);
+    transition: all 200ms ease;
+    cursor: pointer;
+  }
+  .button a {
+    display: block;
+    position: relative;
+    padding-left: 33px;
+    padding-right: 77px;
+    line-height: 47px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+  .button_arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background: var(--theme1-btn-color);
+    text-align: center;
+    transition: all 200ms ease;
+  }
+  .button_arrow i {
+    font-size: 20px;
+    line-height: 47px;
+    color: white;
+    transition: all 200ms ease;
+  }
+  .button:hover {
+    background: #6779c0;
+  }
+  .button:hover .button_arrow {
+    background: var(--theme1-btn-color);
+  }
+  .button:hover .button_arrow i {
+    color: var(--theme1-btn-light-color);
+  }
+}
+.theme-style-1 {
+  font-size: 1rem;
+}
+@include media-breakpoint-up(sm) {
+  .theme-style-1 {
+    font-size: 1rem
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .theme-style-1 {
+    font-size: 1rem
+  }
+  
+}
+
+@include media-breakpoint-up(lg) {
+  .theme-style-1 {
+    font-size: 1.2rem;
+  }
+}

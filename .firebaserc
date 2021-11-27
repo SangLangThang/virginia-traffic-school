@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "virginia-traffic-school"
+  },
+  "targets": {
+    "virginia-traffic-school": {
+      "hosting": {
+        "ng": [
+          "virginia-traffic-school"
+        ]
+      }
+    }
+  }
+}

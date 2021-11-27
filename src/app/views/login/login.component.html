@@ -1,0 +1,72 @@
+<div class="app-body">
+
+  <main class="main d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="card-group">
+            <div class="card p-4">
+              <div class="card-body">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+                  <h1>Login</h1>
+                  <p class="text-muted">Sign In to your account</p>
+                  <alert type="danger" *ngIf="error">
+                    <strong>Oh snap!</strong> {{error}}
+                  </alert>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fa fa-envelope-o"></i></span>
+                    </div>
+                    <input type="email" placeholder="Email" id="email" class="form-control"
+                      [class.is-invalid]="loginForm.get('email').errors && loginForm.get('email').touched"
+                      [class.is-valid]="!loginForm.get('email').errors" formControlName="email">
+                    <div class="invalid-feedback"
+                      *ngIf="loginForm.get('email').errors && loginForm.get('email').touched">
+                      <span *ngIf="loginForm.get('email').errors.required">
+                        This field is required
+                      </span>
+                      <span *ngIf="loginForm.get('email').errors.email">
+                        This field should type of email
+                      </span>
+                    </div>
+                  </div>
+                  <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-lock"></i></span>
+                    </div>
+                    <input type="password" placeholder="Password" id="password" class="form-control"
+                      formControlName="password"
+                      [class.is-invalid]="loginForm.get('password').errors && loginForm.get('password').touched"
+                      [class.is-valid]="!loginForm.get('password').errors">
+                    <div class="invalid-feedback"
+                      *ngIf="loginForm.get('password').errors && loginForm.get('password').touched">
+                      <span *ngIf="loginForm.get('password').errors.required">
+                        This field is required
+                      </span>
+                      <span *ngIf="loginForm.get('password').errors.minlength">
+                        Min {{loginForm.get('password').errors.minlength.requiredLength}} chars is required
+                      </span>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <button type="submit" [disabled]="loginForm.invalid && !isLoading"
+                      data-cy='submit'
+                        class="btn btn-primary px-4">Login</button>
+                    </div>
+                    <div class="col-6 text-right">
+                      <a routerLink="/register" class="btn btn-link px-0">Register Now!</a>
+                    </div>
+                    <!-- <div class="col-6 text-right">
+                      <button type="button" class="btn btn-link px-0">Forgot password?</button>
+                    </div> -->
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

@@ -1,0 +1,24 @@
+<div class="faq  py-4 theme-style-1">
+    <div class="container-fluid container-fluid-product">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="faq_title ">Frequently Asked Questions</h3>
+                <div class="accordions mt-3">
+                    <div class="accordion_container mb-1" *ngFor="let FAQ of FAQs; let i = index">
+                        <div class="accordion d-flex flex-row align-items-center">
+                            <p>{{FAQ.ques}}</p>
+                            <button class="btn btn-outline-light text-dark ml-auto mr-3" (click)="onTogglePanel(i)">
+                                <i class="fa " [class]="togglePanel.includes(i)? 'fa-minus':'fa-plus'"></i>
+                            </button>
+                        </div>
+                        <div id="collapseEvent" [isAnimated]="true" [collapse]="!togglePanel.includes(i)">
+                            <div class="well well-lg card card-block card-header border-0">
+                                <p> {{FAQ.ans}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

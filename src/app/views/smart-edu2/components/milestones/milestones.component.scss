@@ -1,0 +1,23 @@
+
+.section.cl {
+	background-color: #2d3032;
+    color: white;
+}
+.stat-wrap{
+    background-color: #eea412;
+    & p {
+        font-size: 38px;
+        color: #ffffff;
+    }
+    & span {
+        font-size: 16px;
+        color: #ffffff;
+    }
+}
+.icon_wrap {
+    width: 100px;
+    height: 100px;
+    display: block;
+    line-height: 100px;
+    font-size: 34px;
+}

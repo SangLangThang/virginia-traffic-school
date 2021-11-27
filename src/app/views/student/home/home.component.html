@@ -1,0 +1,138 @@
+<div class="home theme-style-1">
+    <ngb-carousel #carousel *ngIf="slides" class="carousel" paused="true">
+        <ng-template ngbSlide *ngFor="let slide of slides">
+            <div class="picsum-img-wrapper">
+                <img [src]="slide.urlImg" alt="Random first slide">
+            </div>
+            <div class="carousel-caption">
+                <div class="home_content text-center">
+                    <div class="home_text">
+                        <h3 class="home_subtitle">{{slide.sub1 }}</h3>
+                        <h1 class="home_title py-2">{{slide.title }}</h1>
+                        <h3 class="home_subtitle">{{slide.sub2 }}</h3>
+                    </div>
+                    <div class="home_buttons">
+                        <div class="button home_button mb-2">
+                            <a routerLink="home">start now<div class="button_arrow"><i class="fa fa-angle-right"></i>
+                                </div></a>
+                        </div>
+                        <div class="button home_button" (click)="goTarget('targetBenefits')"><a>see benefits<div
+                                    class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </ngb-carousel>
+
+    <div class="featured py-4">
+        <div class="container-fluid container-fluid-product">
+            <div class="row align-items-center">
+                <div class="col-12 col-md-4 ">
+                    <div class="featured_background">
+                        <img src="assets/img/photo/featured-main.png" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-md-8 h-100">
+                    <div class="divice"></div>
+                    <div class="d-flex align-items-center justify-content-center justify-content-sm-start">
+                        <p class="featured_tag px-3 font-weight-bold mb-0 text-white rounded mr-2">Best Price</p>
+                        <p class="featured_price text-dark ">Only:<span class="font-weight-bold">$19.95</span></p>
+                    </div>
+                    <div class="featured_title my-2">
+                        <h2 class="mb-0">100% STATE APPROVED </h2>
+                        <span class="mx-3 ">|</span>
+                        <h2 class="mb-0">100% SECURE SITE</h2>
+                    </div>
+                    <div class="row justify-content-sm-center">
+                        <div class="col-sm-6 " *ngFor="let benefit of  benefitFeatured">
+                            <div class="featured_text mt-2 font-weight-bold">
+                                <h4><i class="fa fa-check fa-lg"></i>{{benefit.title}}</h4>
+                                <p >{{benefit.sub}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divice"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid container-fluid-product py-4">
+        <div class="row">
+            <div class="col-sm-4 d-flex justify-content-center align-items-center">
+                <img src="assets/img/photo/seal-state.png" alt="">
+            </div>
+            <div class="col-sm-8">
+                <form>
+                    <h3 class="text-dark">Student Login </h3>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon-user"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Username"
+                            autocomplete="username" required>
+                    </div>
+                    <div class="input-group mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="icon-lock"></i></span>
+                        </div>
+                        <input type="password" class="form-control" placeholder="Password"
+                            autocomplete="current-password" required>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <button type="button" class="btn btn-primary px-4">Login</button>
+                        </div>
+                        <div class="col-6 text-right">
+                            <button type="button" class="btn btn-link px-0">Forgot password?</button>
+                        </div>
+                    </div>
+                </form>
+                <img class="mt-2" src="assets/img/photo/img_paymenttype-removebg-preview.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="info_container bg-white py-4">
+        <div class="container-fluid container-fluid-product">
+            <h3 class="section_title text-uppercase"><i class="fa fa-star fa-lg "></i>Why choose us<i
+                    class="fa fa-star fa-lg "></i>
+            </h3>
+            <div class="row mt-3">
+                <div class="col-12" *ngFor="let info of infos">
+                    <h3 class="info_title">{{info.title}}</h3>
+                    <div class="info_text">
+                        <p *ngFor=" let sub of info.subs">
+                            {{sub.content}}
+                        </p>
+                        <ul *ngIf="info.texts?.length>0">
+                            <li *ngFor="let text of info.texts">
+                                {{text.content}}
+                            </li>
+                        </ul>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-testimonial></app-testimonial>
+    <app-faq></app-faq>
+    <div class="section section_white py-4 py-md-2">
+        <div class="container-fluid container-fluid-product">
+            <div class="row">
+                <div class="col-12 col-md-4 d-flex justify-content-center flex-column align-items-center">
+                    <div class="section_title">
+                        <h3>Virginia Traffic School Course On Any Device, Any Time</h3>
+                    </div>
+                    <img [style]="{'max-width':'350px'}" src="assets/img/photo/featured-1.png" alt="">
+                </div>
+                <div class="col-12 col-md-8 d-flex justify-content-center">
+                    <img src="assets/img/photo/responsive-583x350-removebg-preview.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

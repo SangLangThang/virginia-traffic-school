@@ -1,0 +1,41 @@
+<section class="section theme-style-3  page-section py-5">
+    <div class="container-fluid container-fluid-product">
+        <div class="section-title row text-center">
+            <div class="col-md-8 offset-md-2">
+                <h3>Our history</h3>
+                <p class="lead">Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem
+                    quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem!</p>
+            </div>
+        </div><!-- end title -->
+        <div class="row">
+            <div class="col-12">
+                <swiper [config]="config" class="timeline theme-style-1">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" *ngFor="let ourHistory of ourHistorys; let index = index">
+                            <div class="content">
+                                <app-timeline-item [timeline]="ourHistory"
+                                    [direction]="index % 2 ===0 ? ['bottom','top']:['top','bottom']" [index]="index">
+                                </app-timeline-item>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next">
+
+                    </div>
+                    <div class="swiper-button-prev">
+
+                    </div>
+                </swiper>
+            </div>
+        </div>
+        <div class="timeline-single">
+            <app-timeline-single [timeline]="ourHistory" *ngFor="let ourHistory of ourHistorys">
+            </app-timeline-single>
+        </div>
+    </div>
+</section>

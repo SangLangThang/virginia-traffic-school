@@ -1,0 +1,11 @@
+<div class="timeline__item">
+    <div class="timeline__content bottom img-bg" [class.hiddenItem]="index % 2 !== 0" [style]="imgUrl">
+        <h2 class="text-white">{{timeline?.year}}</h2>
+        <p class="text-white">{{timeline?.content}}</p>
+    </div>
+    <div class="divider"></div>
+    <div class="timeline__content top img-bg" [class.hiddenItem]="index % 2 === 0" [style]="imgUrl">
+        <h2 class="text-white">{{timeline?.year}}</h2>
+        <p class="text-white">{{timeline?.content}}</p>
+    </div>
+</div>

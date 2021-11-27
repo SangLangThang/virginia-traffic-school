@@ -1,0 +1,62 @@
+<header class="header theme-style-1">
+    <!-- Top Bar -->
+    <div class="top_bar w-100" ngxHideOnScroll [propertyUsedToHide]="'height'" [valueWhenHidden]="'0px'"
+        [valueWhenShown]="'60px'" hideOnScroll="'up'" classNameWhenHidden="">
+        <div class="container-fluid container-fluid-product h-100 ">
+            <div class="row h-100">
+                <div class="col-12 d-flex flex-row align-items-center justify-content-between">
+                    <ul class="top_bar_contact_list">
+                        <li>
+                            <p class="mr-1 text-uppercase">Have any questions? <span>|</span></p>
+                        </li>
+                        <li>
+                            <p class="mr-1">{{productInfo.phone}} <span >|</span> </p>
+                        </li>
+                        <li>
+                            <p class="mr-1">{{productInfo.email}}</p>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a routerLink="home">Register</a> <span class="text-white">|</span></li>
+                        <li><a routerLink="home" class="login">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Header Content -->
+    <div class="header_container w-100 bg-white">
+        <div class="container-fluid container-fluid-product h-100 ">
+            <div class="row h-100 ">
+                <nav class="col-12 h-100 bg-white d-flex">
+                    <a routerLink="home">
+                        <div class="h-100  d-flex align-items-center justify-content-start">
+                            <div class="h-100"><img class="h-100" src="assets/img/photo/virginia-logo.png" alt=""></div>
+                            <div class="h-100 logo_title"><img class="h-100"
+                                    src="assets/img/photo/virginia-logo-title.png" alt="">
+                            </div>
+                        </div>
+                    </a>
+                    <ul class="main_nav" [class.active]="toggleMenuMobile">
+                        <span #link class="menu_close"><i class="fa fa-close fa-3x"></i></span>
+                        <li #link routerLinkActive="active"><a routerLink="home">HOME</a></li>
+                        <li #link routerLinkActive="active"><a routerLink="start-course">START COURSE</a></li>
+                        <li #link routerLinkActive="active"><a routerLink="about-us">ABOUT US</a></li>
+                        <li #link routerLinkActive="active"><a routerLink="contact-us">CONTACT US</a></li>
+                        <li #link routerLinkActive="active"><a routerLink="login">
+                                <i class="fa fa-star fa-lg "></i>
+                                STUDENT LOGIN
+                            </a>
+                        </li>
+                    </ul>
+                    <div #link class="hamburger ">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+</header>

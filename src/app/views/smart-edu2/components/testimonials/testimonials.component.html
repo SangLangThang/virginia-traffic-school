@@ -1,0 +1,31 @@
+<div class="section theme-style-3 py-5 parallax parallax-off" style="background-image:url('assets/img/photo/testimonial-bg-01.jpg');">
+    <div class="container-fluid container-fluid-product">
+        <div class="section-title text-center ">
+            <h3 class="font-weight-bold pb-2 text-white">Testimonials</h3>
+            <p class="pb-5">Lorem ipsum dolor sit aet, consectetur adipisicing lit sed do eiusmod tempor incididunt ut
+                labore et
+                dolore magna aliqua. </p>
+        </div><!-- end title -->
+    </div><!-- end container -->
+    <swiper [config]="config" class="swiper testimonial">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let testimonial of testimonials">
+                <div class="content text-center" >
+                    <div class="testi-meta pb-3">
+                        <img [src]="testimonial.avatar" class="img-fluid">
+                        <h4 class="text-white font-weight-bold">{{testimonial.name}}</h4>
+                    </div>
+                    <div class="desc bg-dark rounded p-4 b-0">
+                        <h3><i class="fa fa-quote-left"></i> Wonderful Support!</h3>
+                        <p class="content_comment">{{testimonial.comment}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </swiper>
+</div><!-- end section -->

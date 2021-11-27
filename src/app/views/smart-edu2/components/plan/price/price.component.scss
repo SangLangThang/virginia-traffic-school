@@ -1,0 +1,22 @@
+.box{
+    row-gap: 20px;
+}
+.pricing-table{
+    width: 90%;
+    margin: 0 auto;
+    transition: 0.5s all ease;
+    &:hover{
+        & .pricing-table-header{
+            background-color: var(--theme3-primary-color) !important;
+        }
+        transform: scale(1.05,1.06);
+    }
+}
+@media only screen and (max-width: 991px) {
+    
+}
+@media only screen and (max-width: 576px) {
+    .pricing-table{
+        width: 100%;
+    }
+}

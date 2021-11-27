@@ -1,0 +1,39 @@
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class=" col-12 col-md-6 col-lg-4" *ngFor="let product of products">
+          <div class="card overflow-hidden mb-3 mb-sm-4 border hover-shadow rounder">
+            <div class="card-body btn-hover-trigger position-relative product-grid-header">
+              <a class="product-image-wrapper position-absolute w-100 h-100 d-block" [routerLink]="product.url">
+                <img [src]="product.img" class="w-100 h-100">
+              </a>
+              <a [routerLink]="product.url"
+                class="btn btn-success position-absolute end-0 bottom-0 mb-2 me-2 z-index-1 btn-hover">
+                Live preview
+              </a>
+            </div>
+            <div class="card-footer card-footer-product bg-white">
+              <div class="d-flex justify-content-between">
+                <div class="min-width-0 pe-4">
+                  <div class="product-title fw-bold mb-1">
+                    <p class="font-weight-bold mb-0">
+                      {{product.name}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center justify-content-between">
+                  <i class=" text-warning fa fa-star fa-lg " *ngFor="let star of stars; let i = index"
+                    [class]=" i+1 <= product.stars ? 'text-warning' :'text-muted'">
+                  </i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
