@@ -6,33 +6,27 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ["./about-us.component.scss"],
 })
 export class AboutUsComponent implements OnInit {
-  courses = [0, 1548];
-  students = [0, 7286];
-  teachers = [0, 257];
-  countries = [0, 39];
   timeInterval: any;
   counter = 0;
+  milestones = [
+    { name: "courses", max: 123, start: 0 },
+    { name: "students", max: 7258, start: 0 },
+    { name: "teachers", max: 257, start: 0 },
+    { name: "countries", max: 39, start: 0 },
+  ];
   constructor(private modalService: NgbModal) {}
 
   ngOnInit(): void {
     this.timeInterval = setInterval(() => {
-      this.counter++
-      if(this.courses[1] > this.counter){
-        this.courses[0] ++ 
+      this.counter = this.counter + 50;
+      for (let item of this.milestones) {
+        if (this.counter > item.max) {
+          item.start = item.max;
+        } else {
+          item.start = this.counter;
+        }
       }
-      if(this.students[1] > this.counter){
-        this.students[0] = this.counter 
-      }
-      if(this.teachers[1] > this.counter){
-        this.teachers[0] = this.counter 
-      }
-      if(this.countries[1] > this.counter){
-        this.countries[0] = this.counter 
-      }
-      if(this.counter > 1548) {
-        clearInterval(this.timeInterval)
-      }
-    }, 1);
+    }, 30);
   }
   openScrollableContent(longContent) {
     this.modalService.open(longContent, { scrollable: true });

@@ -32,7 +32,7 @@
                                 experience in the traffic school industry. Our company has expanded nationally
                                 graduating hundreds of thousands of satisfied students.</p>
                         </div>
-                        <div class="button teachers_button" (click)="openScrollableContent(longContent)">
+                        <div data-testid="openModal" class="button teachers_button" (click)="openScrollableContent(longContent)">
                             <a>More Infomation
                                 <div class="button_arrow">
                                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -88,7 +88,7 @@
                 <div class="col-sm-6 col-md-3 milestone_col">
                     <div class="milestone text-center">
                         <div class="milestone_icon"><img class="filter-green" src="assets/img/photo/milestone_1.svg" alt=""></div>
-                        <div class="milestone_counter" data-end-value="1548">{{courses[0]}}</div>
+                        <div class="milestone_counter" data-end-value="1548">{{milestones[0].start}}</div>
                         <div class="milestone_text">Online Courses</div>
                     </div>
                 </div>
@@ -97,7 +97,7 @@
                 <div class="col-sm-6 col-md-3 milestone_col">
                     <div class="milestone text-center">
                         <div class="milestone_icon"><img class="filter-green" src="assets/img/photo/milestone_2.svg" alt=""></div>
-                        <div class="milestone_counter" data-end-value="7286">{{students[0]}} </div>
+                        <div class="milestone_counter" data-end-value="7286">{{milestones[1].start}} </div>
                         <div class="milestone_text">Students</div>
                     </div>
                 </div>
@@ -106,7 +106,7 @@
                 <div class="col-sm-6 col-md-3 milestone_col">
                     <div class="milestone text-center">
                         <div class="milestone_icon"><img class="filter-green" src="assets/img/photo/milestone_3.svg" alt=""></div>
-                        <div class="milestone_counter" data-end-value="257">{{teachers[0]}}</div>
+                        <div class="milestone_counter" data-end-value="257">{{milestones[2].start}}</div>
                         <div class="milestone_text">Teachers</div>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                 <div class="col-sm-6 col-md-3 milestone_col">
                     <div class="milestone text-center">
                         <div class="milestone_icon"><img class="filter-green" src="assets/img/photo/milestone_4.svg" alt=""></div>
-                        <div class="milestone_counter" data-end-value="39">{{countries[0]}}</div>
+                        <div class="milestone_counter" data-end-value="39">{{milestones[3].start}}</div>
                         <div class="milestone_text">Countries</div>
                     </div>
                 </div>
@@ -125,14 +125,14 @@
     </div>
 </div>
 
-<ng-template #longContent let-modal>
+<ng-template  #longContent let-modal>
     <div class="modal-header">
         <h4 class="modal-title">We are on your side!</h4>
-        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <button type="button" data-testid="closeModal" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div class="modal-body">
+    <div class="modal-body" data-testid="modal-body">
         <p>We have been involved in the traffic safety, traffic school and innovative driver training services industry
             since 1986, with a knowledge base of over 45 years worth of experience in the traffic school industry. Our
             company has expanded nationally graduating hundreds of thousands of satisfied students.

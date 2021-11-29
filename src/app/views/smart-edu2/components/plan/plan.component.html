@@ -9,9 +9,9 @@
         <div class="row">
             <div class="col-12 col-sm-8 offset-sm-2 col-md-4 offset-md-4">
                 <ul class="groups-btn d-flex justify-content-center p-2">
-                    <li class=""><button class=" p-3 btn btn-outline-dark btn-lg btn-section select" (click)="onChangePrice('month')">Monthly Subscription</button>
+                    <li class=""><button class=" p-3 btn btn-outline-dark btn-lg btn-section select" data-testid="changePriceToMonth" (click)="onChangePrice('month')">Monthly Subscription</button>
                     </li>
-                    <li><button class="p-3 btn btn-outline-dark btn-lg btn-section" (click)="onChangePrice('year')">Yearly Subscription</button></li>
+                    <li><button class="p-3 btn btn-outline-dark btn-lg btn-section" data-testid="changePriceToYear" (click)="onChangePrice('year')">Yearly Subscription</button></li>
                 </ul>
             </div><!-- end col -->
         </div>

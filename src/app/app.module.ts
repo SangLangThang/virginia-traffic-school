@@ -43,6 +43,8 @@ import { LoginComponent } from "./views/login/login.component";
 import { RegisterComponent } from "./views/register/register.component";
 import { StudentModule } from "./views/student/student.module";
 import { PermissionComponent } from "./views/error/permission.component";
+import {LayoutModule} from '@angular/cdk/layout';
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
 };
@@ -75,6 +77,7 @@ const APP_CONTAINERS = [DefaultLayoutComponent];
     NgbModule,
     FormsModule,
     ToastModule,
+    LayoutModule
   ],
   declarations: [
     AppComponent,

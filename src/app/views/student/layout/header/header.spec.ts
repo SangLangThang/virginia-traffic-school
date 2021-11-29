@@ -6,7 +6,10 @@ import {
   TestBed,
   tick,
 } from "@angular/core/testing";
-import { click, FakeMediaMatcher } from "../../../../testing/element.spec-helper";
+import {
+  click,
+  FakeMediaMatcher,
+} from "../../../../testing/element.spec-helper";
 import { HeaderComponent } from "./header.component";
 
 describe("HeaderComponent", () => {

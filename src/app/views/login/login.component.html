@@ -7,17 +7,17 @@
           <div class="card-group">
             <div class="card p-4">
               <div class="card-body">
-                <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)"  data-testid="form">
                   <h1>Login</h1>
                   <p class="text-muted">Sign In to your account</p>
-                  <alert type="danger" *ngIf="error">
+                  <alert type="danger" *ngIf="error" data-testid="error">
                     <strong>Oh snap!</strong> {{error}}
                   </alert>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fa fa-envelope-o"></i></span>
                     </div>
-                    <input type="email" placeholder="Email" id="email" class="form-control"
+                    <input type="email" placeholder="Email" id="email" class="form-control" data-testid="email"
                       [class.is-invalid]="loginForm.get('email').errors && loginForm.get('email').touched"
                       [class.is-valid]="!loginForm.get('email').errors" formControlName="email">
                     <div class="invalid-feedback"
@@ -35,7 +35,7 @@
                       <span class="input-group-text"><i class="icon-lock"></i></span>
                     </div>
                     <input type="password" placeholder="Password" id="password" class="form-control"
-                      formControlName="password"
+                      formControlName="password" data-testid="password"
                       [class.is-invalid]="loginForm.get('password').errors && loginForm.get('password').touched"
                       [class.is-valid]="!loginForm.get('password').errors">
                     <div class="invalid-feedback"
@@ -51,7 +51,7 @@
                   <div class="row">
                     <div class="col-6">
                       <button type="submit" [disabled]="loginForm.invalid && !isLoading"
-                      data-cy='submit'
+                      data-cy='submit' data-testid="submit"
                         class="btn btn-primary px-4">Login</button>
                     </div>
                     <div class="col-6 text-right">

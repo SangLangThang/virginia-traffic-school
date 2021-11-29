@@ -9,10 +9,11 @@ export class TimelineItemComponent implements OnInit {
   @Input() timeline: { year: string; content: string; imageUrl: string };
   @Input() direction: string[];
   @Input() index: number;
+  constructor() {
+    this.timeline = { year: "", content: "", imageUrl: "" };
+  }
   imgUrl: string;
-  constructor() {}
-
   ngOnInit(): void {
-    this.imgUrl = `background-image:url(${this.timeline?.imageUrl}) ;`;
+    this.imgUrl = `background-image:url(${this.timeline.imageUrl}) ;`;
   }
 }

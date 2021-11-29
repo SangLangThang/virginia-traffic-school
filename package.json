@@ -57,6 +57,7 @@
     "firebase": "^7.0 || ^8.0",
     "flag-icon-css": "^3.5.0",
     "font-awesome": "^4.7.0",
+    "jest-matchmedia-mock": "^1.1.0",
     "ng-mocks": "^12.5.0",
     "ng2-charts": "^2.4.2",
     "ngx-bootstrap": "^6.2.0",

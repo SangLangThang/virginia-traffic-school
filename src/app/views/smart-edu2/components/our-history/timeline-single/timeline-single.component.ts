@@ -1,16 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-timeline-single',
-  templateUrl: './timeline-single.component.html',
-  styleUrls: ['./timeline-single.component.scss']
+  selector: "app-timeline-single",
+  templateUrl: "./timeline-single.component.html",
+  styleUrls: ["./timeline-single.component.scss"],
 })
 export class TimelineSingleComponent implements OnInit {
   @Input() timeline: { year: string; content: string; imageUrl: string };
-  constructor() { }
+  constructor() {
+    this.timeline = { year: "", content: "", imageUrl: "" };
+  }
   imgUrl: string;
   ngOnInit(): void {
-    this.imgUrl = `background-image:url(${this.timeline?.imageUrl}) ;`;
+    this.imgUrl = `background-image:url(${this.timeline.imageUrl}) ;`;
   }
-
 }

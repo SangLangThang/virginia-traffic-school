@@ -16,8 +16,10 @@
                             <a routerLink="home">start now<div class="button_arrow"><i class="fa fa-angle-right"></i>
                                 </div></a>
                         </div>
-                        <div class="button home_button" (click)="goTarget('targetBenefits')"><a>see benefits<div
-                                    class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div></a>
+                        <div class="button home_button" >
+                            <a>more info
+                                <div class="button_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -36,7 +38,8 @@
                 <div class="col-12 col-md-8 h-100">
                     <div class="divice"></div>
                     <div class="d-flex align-items-center justify-content-center justify-content-sm-start">
-                        <p class="featured_tag px-3 font-weight-bold mb-0 text-white rounded mr-2">Best Price</p>
+                        <p  class="featured_tag px-3 font-weight-bold mb-0 text-white rounded mr-2">Best
+                            Price</p>
                         <p class="featured_price text-dark ">Only:<span class="font-weight-bold">$19.95</span></p>
                     </div>
                     <div class="featured_title my-2">
@@ -48,12 +51,12 @@
                         <div class="col-sm-6 " *ngFor="let benefit of  benefitFeatured">
                             <div class="featured_text mt-2 font-weight-bold">
                                 <h4><i class="fa fa-check fa-lg"></i>{{benefit.title}}</h4>
-                                <p >{{benefit.sub}}</p>
+                                <p>{{benefit.sub}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="divice"></div>
-                    
+
                 </div>
             </div>
         </div>
@@ -70,8 +73,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="icon-user"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Username"
-                            autocomplete="username" required>
+                        <input type="text" class="form-control" placeholder="Username" autocomplete="username" required>
                     </div>
                     <div class="input-group mb-4">
                         <div class="input-group-prepend">
@@ -117,9 +119,9 @@
         </div>
     </div>
 
-    <app-testimonial></app-testimonial>
+    <app-testimonial ></app-testimonial>
     <app-faq></app-faq>
-    <div class="section section_white py-4 py-md-2">
+    <div class="section section_white py-4 py-md-2" #targetBenefits>
         <div class="container-fluid container-fluid-product">
             <div class="row">
                 <div class="col-12 col-md-4 d-flex justify-content-center flex-column align-items-center">

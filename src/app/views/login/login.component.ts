@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
         this.isLoading = false;
         form.reset();
         if (resData.email === "admin@admin.com") {
-          console.log('redirect to admin')
           this.router.navigate(["/dashboard/admin"]);
         } else {
           this.router.navigate(["/dashboard/user"]);

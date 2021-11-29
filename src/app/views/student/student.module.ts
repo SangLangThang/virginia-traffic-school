@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { ExtraOptions, RouterModule, Routes } from "@angular/router";
 import { IconModule } from "@coreui/icons-angular";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
@@ -16,6 +16,7 @@ import { FooterComponent } from "./layout/footer/footer.component";
 import { HeaderComponent } from "./layout/header/header.component";
 import { LayoutComponent } from "./layout/layout.component";
 import { TestimonialComponent } from "./testimonial/testimonial.component";
+
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "home" },
   { path: "home", component: HomeComponent },

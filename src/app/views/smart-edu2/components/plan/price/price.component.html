@@ -3,7 +3,7 @@
         <div class="bg-white shadow rounded pricing-table pricing-table-highlighted ">
             <div class="pricing-table-header py-3 bg-dark ">
                 <h2 class="font-weight-bold">${{pricingFeature.price}}</h2>
-                <p class="text-uppercase font-weight-bold">{{pricingFeature.time}}</p>
+                <p data-testid="plan" class="text-uppercase font-weight-bold">{{pricingFeature.time}}</p>
             </div>
             <div class="pricing-table-features p-4 text-left">
                 <p *ngFor="let item of pricingFeature.features" class="text-muted">

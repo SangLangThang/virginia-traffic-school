@@ -7,7 +7,9 @@
                     <div class="accordion_container mb-1" *ngFor="let FAQ of FAQs; let i = index">
                         <div class="accordion d-flex flex-row align-items-center">
                             <p>{{FAQ.ques}}</p>
-                            <button class="btn btn-outline-light text-dark ml-auto mr-3" (click)="onTogglePanel(i)">
+                            <button class="btn btn-outline-light text-dark ml-auto mr-3" (click)="onTogglePanel(i)"
+                            data-testid="btnTogglePanel"
+                            >
                                 <i class="fa " [class]="togglePanel.includes(i)? 'fa-minus':'fa-plus'"></i>
                             </button>
                         </div>

@@ -137,7 +137,7 @@ export class AuthService {
     }, expirationDuration);
   }
 
-  private handleAuthentication(
+  handleAuthentication(
     email: string,
     userId: string,
     token: string,

@@ -17,9 +17,9 @@ export class PlanServicesService {
   changePricingFeatures(plan: string) {
     if (plan === "month") {
       this.pricingFeaturesChange.next(pricingFeatures);
+      
       return;
-    }
-    if (plan === "year") {
+    }else{
       this.pricingFeaturesChange.next(this.pricingFeatures);
     }
   }

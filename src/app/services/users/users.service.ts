@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, throwError } from "rxjs";
+import { BehaviorSubject, Observable, throwError } from "rxjs";
 import { catchError, concatMap, map } from "rxjs/operators";
 import { environment } from "../../../environments/environment";
 
@@ -27,7 +27,7 @@ export interface UserDatabase {
   email: string;
   lastLoginAt: string;
   localId: string;
-  databaseId:string;
+  databaseId: string;
   displayName: string;
   paymentMethod: string;
   status: string;
@@ -41,8 +41,8 @@ export class UsersService {
   defautAvatar =
     "https://firebasestorage.googleapis.com/v0/b/virginia-traffic-school.appspot.com/o/avatars%2Fdefault.jfif?alt=media&token=bafe94d2-01bf-42db-b6d8-8853b9173da1";
   currentUserDatabaseSubject = new BehaviorSubject<UserDatabase>(null);
-  currentUserDatabase: UserDatabase 
-  databaseId = new BehaviorSubject<string>('');
+  currentUserDatabase: UserDatabase;
+  databaseId = new BehaviorSubject<string>("");
   constructor(private http: HttpClient) {}
 
   updateUser(id: string, user: UserDatabase) {
@@ -55,7 +55,10 @@ export class UsersService {
         `${environment.BASE_URL_DATABASE}/users.json?orderBy="email"&equalTo="${email}"&print=pretty`
       )
       .subscribe((resData: any) => {
-        this.currentUserDatabase = { ...resData[Object.keys(resData)[0]],databaseId:Object.keys(resData)[0]  };
+        this.currentUserDatabase = {
+          ...resData[Object.keys(resData)[0]],
+          databaseId: Object.keys(resData)[0],
+        };
         this.currentUserDatabaseSubject.next(this.currentUserDatabase);
       });
   }
@@ -75,7 +78,7 @@ export class UsersService {
             email: user.email,
             lastLoginAt: user.lastLoginAt,
             localId: user.localId,
-            databaseId:'',
+            databaseId: "",
             displayName: "",
             paymentMethod: "",
             status: "badge-success",
@@ -89,7 +92,7 @@ export class UsersService {
       )
       .pipe(
         concatMap((responUserDatabase: any) => {
-          this.currentUserDatabase.databaseId = responUserDatabase.name
+          this.currentUserDatabase.databaseId = responUserDatabase.name;
           return this.http.get(
             `${environment.BASE_URL_USERS}/${responUserDatabase.name}.json`
           );
@@ -107,6 +110,7 @@ export class UsersService {
         for (let key in response) {
           postArray.push({ ...response[key], id: key });
         }
+        console.log(postArray)
         return postArray;
       }),
       catchError((errorRes) => {
